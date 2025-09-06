@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    networks: [stack]
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks: [stack]
+volumes:
+  mongo_data:
+networks:
+  stack:
+    driver: bridge

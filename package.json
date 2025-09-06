@@ -1,0 +1,29 @@
+{
+  "name": "hwo-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node --loader ts-node/esm --no-warnings src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "lint": "eslint . --ext .ts"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "ts-node": "^10.9.2",
+    "eslint": "^8.57.1",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0"
+  }
+}
